@@ -453,8 +453,8 @@
 
         if (isset($_POST['sendmsg'])) {
             $bericht = $_POST['msg'];
-            $query = $db->prepare("INSERT INTO berichten(id, bericht, db, nieuwsid) VALUES (NULL, :bericht, :db, :id)");
-            $query->bindParam(':id', $id);
+            $query = $db->prepare("INSERT INTO berichten(id, bericht, db, nieuwsid) VALUES (NULL, :bericht, :db, :nid)");
+            $query->bindParam(':nid', $id);
             $query->bindParam(':bericht', $bericht);
             $query->bindParam(':db', $database);
             $query->execute();
